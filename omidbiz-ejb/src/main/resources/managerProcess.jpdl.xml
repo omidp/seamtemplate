@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns=""  name="managerProcess">
+	<start-state name="startManagerFlow">
+		<transition to="upperResponsible-node" name="strat2upperResponsible"></transition>
+	</start-state>
+	
+	<task-node name="responsible-node">
+		<task>
+			<assignment pooled-actors="user"></assignment>
+		</task>
+		<transition to="upperResponsible-node" name="responsible2upperResponsible"></transition>
+	</task-node>
+	
+	<task-node name="upperResponsible-node">
+		<task>
+			<assignment pooled-actors="modir"></assignment>
+		</task>
+		<transition to="responsible-node" name="upperResponsible2responsible"></transition>
+		<transition to="endManagerFlow" name="upperResponsible2end"></transition>
+	</task-node>
+
+
+	<end-state name="endManagerFlow"></end-state>
+</process-definition>
