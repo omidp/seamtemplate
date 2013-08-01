@@ -8,8 +8,13 @@
     </h:head>  
       
     <h:body>  
+    <h:form>
+    	Customer name : 
+    	<p:inputText value="#{customer.cname}"></p:inputText>
+    	<p:commandButton action="#{customerAction.save()}" value="Save A Customer !"></p:commandButton>
+    </h:form>
       
-        <p:spinner />  
+      
           
     </h:body>  
 </html> 
