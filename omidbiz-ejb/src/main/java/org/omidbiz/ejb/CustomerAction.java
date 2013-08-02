@@ -1,5 +1,7 @@
 package org.omidbiz.ejb;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import org.omidbiz.model.Customer;
@@ -8,5 +10,7 @@ import org.omidbiz.model.Customer;
 public interface CustomerAction {
 
 	public void save();
+
+	public List<Customer> findAll();
 
 }
